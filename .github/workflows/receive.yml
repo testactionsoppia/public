@@ -1,0 +1,14 @@
+name: Build release candidate
+on:
+  repository_dispatch:
+    types: [develop-commit]
+
+jobs:
+  build:
+    name: >-
+      Build commit "${{ github.event.inputs.sha }}" 
+      from repo "${{ github.event.inputs.repo_owner }}/oppia"'
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Output all inputs
+        run: echo "test"
